@@ -65,22 +65,13 @@
     .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
       color:rgb(0 0 0 / 90%);
     }
-    dl {
-      display: flex;
-      flex-flow: row wrap;
-      margin:0 16px;
-    }
+   
     dt {
       flex-basis: 35%;
-      padding: 10px 10px 10px 0;
-      font-weight: bold;
       border-bottom: 1px solid var(--v-grey-lighten2);
     }
     dd {
       flex-basis: 60%;
-      flex-grow: 1;
-      margin: 0;
-      padding: 10px 10px 10px 0;
       border-bottom: 1px solid var(--v-grey-lighten2);
     }
 
@@ -90,7 +81,16 @@
     table tr {
       background-color: #fff;
     }
-    
+    section:first-child { 
+      border-bottom: 1px solid var(--v-grey-lighten2)!important; 
+      background-color: #fff;
+      padding-bottom: 50px;
+    }
+    .theme--dark.v-tabs>.v-tabs-bar { 
+      border: none!important; }
+    .theme--light.v-tabs>.v-tabs-bar .v-tab:not(.v-tab--active) { 
+      border-bottom: 2px solid  var(--v-grey-lighten2)!important; }  
+
   </style>
 
 </head>
@@ -101,7 +101,7 @@
             <h1 class="font-weight-bold" style="font-size:24px;">MyeloMATCH</h1>
           </div>
       <v-main>
-        <div class="white" style="border-bottom:1px solid red">
+        <section>
           <v-container py-10>
             <h1>Participant Screening ID 12345</h1>
             <v-row>
@@ -109,21 +109,21 @@
                 <i aria-hidden="true" class="v-icon fas fa-male green--text text--lighten-5 text-center" style="font-size: 1250%;"></i>
               </v-col>
               <v-col cols="12" md="5" sm="10">
-                <dl>
-                  <dt>Age at registration</dt>
-                  <dd>41</dd>
-                  <dt>Registration date</dt>
-                  <dd>5/23/2020 9:02 AM EDT</dd>
-                  <dt>Demographics</dt>
-                  <dd>male, white, non-hispanic</dd>
-                  <dt>Disease</dt>
-                  <dd>Bronchioloalveolar carcinoma</dd>
-                  <dt>Disease Code</dt>
-                  <dd>10058354</dd>
-                  <dt>Prior drugs</dt>
-                  <dd>Afatinib</dd>
-                  <dt>ELN score</dt>
-                  <dd>-</dd>
+                <dl class="d-flex flex-wrap my-0 mx-4">
+                  <dt class="pa-3 pr-0 font-weight-bold">Age at registration</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">41</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">Registration date</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">5/23/2020 9:02 AM EDT</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">Demographics</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">male, white, non-hispanic</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">Disease</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">Bronchioloalveolar carcinoma</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">Disease Code</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">10058354</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">Prior drugs</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">Afatinib</dd>
+                  <dt class="pa-3 pr-0 font-weight-bold">ELN score</dt>
+                  <dd class="flex-grow-1 ma-0 pa-3">-</dd>
                 </dl>
                 <div class="text-center d-flex">
                   <v-btn class="ma-2 flex-md-grow-1" outlined color="#19667B">
@@ -206,43 +206,39 @@
               </v-col>
             </v-row>
           </v-container>
-        
-
-        <v-container pb-0>
-          <v-row>
-            <v-col col="12" class="pb-0">
-                <v-tabs
-                    v-model="tab"
-                    background-color="#19667B"
-                    grow dark
-                    height="40px" class="mt-8 mb-0"
-                  >
-                  <v-tab style="background-color:#0080A5" >Tier 1</v-tab>
-                  <v-tab style="background-color:#D5EBF1; color:#319FBE" >Tier 2</v-tab>
-                  <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 3</v-tab>
-                  <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 4</v-tab>
-
-                  </v-tabs>
-              
-                  <!-- <v-tabs-items v-model="tab">
-                    <v-tab-item
-                      v-for="item in items"
-                      :key="item"
-                    >
-                      <v-card
-                        color="basil"
-                        flat
-                      >
-                        <v-card-text>{{ text }}</v-card-text>
-                      </v-card>
-                    </v-tab-item>
-                  </v-tabs-items> -->  
-            </v-col>
-          </v-row>
-        </v-container>
-      </div>
+      </section>
 
       <v-container>
+        <v-row class="mt-n16">
+          <v-col col="12" class="pb-0 mt-n8">
+              <v-tabs
+                  v-model="tab"
+                  background-color="#19667B"
+                  grow dark
+                  height="40px" class="mt-8 mb-0"
+                >
+                <v-tab style="background-color:#0080A5" >Tier 1</v-tab>
+                <v-tab style="background-color:#D5EBF1; color:#319FBE" >Tier 2</v-tab>
+                <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 3</v-tab>
+                <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 4</v-tab>
+
+                </v-tabs>
+            
+                <!-- <v-tabs-items v-model="tab">
+                  <v-tab-item
+                    v-for="item in items"
+                    :key="item"
+                  >
+                    <v-card
+                      color="basil"
+                      flat
+                    >
+                      <v-card-text>{{ text }}</v-card-text>
+                    </v-card>
+                  </v-tab-item>
+                </v-tabs-items> -->  
+          </v-col>
+        </v-row>
         <v-row>
           <v-col col="12">
             <v-tabs
