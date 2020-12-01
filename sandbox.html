@@ -81,6 +81,9 @@
     table tr {
       background-color: #fff;
     }
+    table td:first-child {
+        font-weight: bold;
+    }  
     section:first-child { 
       border-bottom: 1px solid var(--v-grey-lighten2)!important; 
       background-color: #fff;
@@ -90,6 +93,8 @@
       border: none!important; }
     .theme--light.v-tabs>.v-tabs-bar .v-tab:not(.v-tab--active) { 
       border-bottom: 2px solid  var(--v-grey-lighten2)!important; }  
+    
+
 
   </style>
 
@@ -177,19 +182,19 @@
                   <table>
                       <thead>
                         <tr>
-                          <th class="text-left"> </th>
-                          <th class="text-left">Protocol</th>
-                          <th class="text-left">Onc. Group</th>
-                          <th class="text-left">ID</th>
-                          <th class="text-left">Assigned in</th>
-                          <th class="text-left">On treatment</th>
-                          <th class="text-left">Reason off tier</th>
-                          <th class="text-left">Time until next tier</th>
+                          <th> </th>
+                          <th>Protocol</th>
+                          <th>Onc. Group</th>
+                          <th>ID</th>
+                          <th>Assigned in</th>
+                          <th>On treatment</th>
+                          <th>Reason off tier</th>
+                          <th>Time until next tier</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="font-weight-bold">Tier 1</td>
+                          <td>Tier 1</td>
                           <td>High-risk (YA)</td>
                           <td>CCTG</td>
                           <td>12345</td>
