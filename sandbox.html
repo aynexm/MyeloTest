@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link href="css/app.64dbaa87.css" rel="stylesheet">
+  <link href="css/chunk-3c9e78ef.2b87c07c.css" rel="stylesheet">
+  <link href="css/chunk-e0433bb2.351adf19.css" rel="stylesheet">
+  <link href="css/chunk-vendors.3d7d2b5f.css" rel="stylesheet" >
+  <link href="css/ParticipantsDetail.4c49379b.css" rel="stylesheet">
+  <link href="css/ParticipantsDetail~ProtocolsDetail.3735e853.css" rel="stylesheet">
+  <link href="css/colors.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+    /* Typography */
+    h1, h2, h3, h4, h5, .usa-display {
+        font-weight: 300;
+        line-height: 1.3em;
+        margin-top:0.5em;
+    }
+    .usa-display {
+        font-size:3rem;
+    }
+    h1 {
+        font-size:2rem;
+    }
+    h2 {
+        font-size:1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size:1rem;
+    }
+    h6 {
+        font-size: 0.815rem;
+        font-weight:400;
+        text-transform: uppercase;
+    }
+    p {
+        font-size:1rem;
+    }
+    p.body-2 {
+        font-size: 2.75em;
+    }
+    a:link {
+        color:var(--v-blue-base) !important;
+        text-decoration: underline;
+    }
+
+    .header {
+      height:70px;
+      text-align:center;
+      background-color:var(--v-aqua-darken2);
+      font-size:20px;
+    }
+    .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+      color:rgb(0 0 0 / 90%);
+    }
+    dl {
+      display: flex;
+      flex-flow: row wrap;
+      margin:0 16px;
+    }
+    dt {
+      flex-basis: 35%;
+      padding: 10px 10px 10px 0;
+      font-weight: bold;
+      border-bottom: 1px solid var(--v-grey-lighten2);
+    }
+    dd {
+      flex-basis: 60%;
+      flex-grow: 1;
+      margin: 0;
+      padding: 10px 10px 10px 0;
+      border-bottom: 1px solid var(--v-grey-lighten2);
+    }
+
+    .current-box.theme--light.v-card {
+      background-color:var(--v-aqua-base);
+    }
+    table tr {
+      background-color: #fff;
+    }
+    
+  </style>
+
+</head>
+<body>
+  <div id="app">
+    <v-app>
+          <div class="header white--text text-center pt-2">
+            <h1 class="font-weight-bold" style="font-size:24px;">MyeloMATCH</h1>
+          </div>
+      <v-main>
+        <div class="white" style="border-bottom:1px solid red">
+          <v-container py-10>
+            <h1>Participant Screening ID 12345</h1>
+            <v-row>
+              <v-col cols="2" md="1" class="d-none d-sm-flex">
+                <i aria-hidden="true" class="v-icon fas fa-male green--text text--lighten-5 text-center" style="font-size: 1250%;"></i>
+              </v-col>
+              <v-col cols="12" md="5" sm="10">
+                <dl>
+                  <dt>Age at registration</dt>
+                  <dd>41</dd>
+                  <dt>Registration date</dt>
+                  <dd>5/23/2020 9:02 AM EDT</dd>
+                  <dt>Demographics</dt>
+                  <dd>male, white, non-hispanic</dd>
+                  <dt>Disease</dt>
+                  <dd>Bronchioloalveolar carcinoma</dd>
+                  <dt>Disease Code</dt>
+                  <dd>10058354</dd>
+                  <dt>Prior drugs</dt>
+                  <dd>Afatinib</dd>
+                  <dt>ELN score</dt>
+                  <dd>-</dd>
+                </dl>
+                <div class="text-center d-flex">
+                  <v-btn class="ma-2 flex-md-grow-1" outlined color="#19667B">
+                    <!-- <v-icon left>fa-file</v-icon> -->
+                    Participant PDF
+                  </v-btn>
+                  <v-btn class="ma-2 flex-md-grow-1" outlined color="#19667B">
+                    <!-- <v-icon left>fa-comment</v-icon> -->
+                    Comments & Documents
+                  </v-btn>
+                  </div>
+                  
+              </v-col>
+              <v-col cols="12" md="6" class="py-0 pr-0">
+                <v-card class="pa-2 mb-1" tile>
+                  timer
+                </v-card>
+                <v-sheet class="pa-1" color="#319FBE" min-height="225">
+                  <v-row>
+                    <v-col col="6" class='py-0 pr-0 d-flex'>
+                      <v-card color="#f5f5f5" class="pa-2 elevation-0 align-stretch flex-grow-1">
+                        <h2 class="overline">Current Status</h2>
+                        <span class="font-weight-bold">Tier 1 - Registered</span>
+                      </v-card>
+                    </v-col>
+                    <v-col col="6" class='py-0 pl-1'>
+                      <v-card color="#f5f5f5" class="pa-2 elevation-0 align-stretch">
+                        <h2 class="overline">Date Registered</h2>
+                        <span class="font-weight-bold">5/23/2020 9:02 AM EDT</span>
+                        <span class="font-italic caption pl-1">2 hours ago</span> 
+                      </v-card>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col col="12" class='pb-0 pt-1 d-flex'>
+                    <v-card color="#f5f5f5" class="elevation-0 flex-grow-1">
+                      <p class="text-center my-16">No samples have been received yet.</p>
+                    </v-card>
+                  </v-col>
+                </v-row>
+                </v-sheet>
+              </v-col>
+            </v-row>
+
+            <v-row>
+              <v-col col="12"><h2>Participant History</h2></v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12">
+                <div class="v-data-table theme--light"><div class="v-data-table__wrapper">
+                  <table>
+                      <thead>
+                        <tr>
+                          <th class="text-left"> </th>
+                          <th class="text-left">Protocol</th>
+                          <th class="text-left">Onc. Group</th>
+                          <th class="text-left">ID</th>
+                          <th class="text-left">Assigned in</th>
+                          <th class="text-left">On treatment</th>
+                          <th class="text-left">Reason off tier</th>
+                          <th class="text-left">Time until next tier</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="font-weight-bold">Tier 1</td>
+                          <td>High-risk (YA)</td>
+                          <td>CCTG</td>
+                          <td>12345</td>
+                          <td>85 hours</td>
+                          <td>10 days</td>
+                          <td>Treatment complete</td>
+                          <td>5 days</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                   
+                </div> 
+              </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        
+
+        <v-container pb-0>
+          <v-row>
+            <v-col col="12" class="pb-0">
+                <v-tabs
+                    v-model="tab"
+                    background-color="#19667B"
+                    grow dark
+                    height="40px" class="mt-8 mb-0"
+                  >
+                  <v-tab style="background-color:#0080A5" >Tier 1</v-tab>
+                  <v-tab style="background-color:#D5EBF1; color:#319FBE" >Tier 2</v-tab>
+                  <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 3</v-tab>
+                  <v-tab style="background-color:#eeeeee; color:#9e9e9e" >Tier 4</v-tab>
+
+                  </v-tabs>
+              
+                  <!-- <v-tabs-items v-model="tab">
+                    <v-tab-item
+                      v-for="item in items"
+                      :key="item"
+                    >
+                      <v-card
+                        color="basil"
+                        flat
+                      >
+                        <v-card-text>{{ text }}</v-card-text>
+                      </v-card>
+                    </v-tab-item>
+                  </v-tabs-items> -->  
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+
+      <v-container>
+        <v-row>
+          <v-col col="12">
+            <v-tabs
+              v-model="tab"
+              background-color="transparent"
+              fixed-tabs
+              color="#0080A5">
+              <v-tab><v-icon left>fa-vials</v-icon> Samples</v-tab>
+              <v-tab><v-icon left>fa-dna</v-icon> Molecular Characterization</v-tab>
+              <v-tab><v-icon left>fa-clipboard</v-icon>Treatment Assignment</v-tab>
+            </v-tabs>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col col="12">
+            <template>
+              <div>
+                <v-data-table
+                  :headers="headers"
+                  :items="desserts"
+                  :options.sync="options"
+                  :server-items-length="totalDesserts"
+                  :loading="loading"
+                  class="elevation-1"
+                ></v-data-table>
+              </div>
+            </template>
+          </v-col>
+        </v-row>
+      </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data () {
+    return {
+      totalDesserts: 0,
+      desserts: [],
+      loading: true,
+      options: {},
+      headers: [
+        {
+          text: 'Dessert (100g serving)',
+          align: 'start',
+          sortable: false,
+          value: 'name',
+        },
+        { text: 'Calories', value: 'calories' },
+        { text: 'Fat (g)', value: 'fat' },
+        { text: 'Carbs (g)', value: 'carbs' },
+        { text: 'Protein (g)', value: 'protein' },
+        { text: 'Iron (%)', value: 'iron' },
+      ],
+    }
+  },
+  watch: {
+    options: {
+      handler () {
+        this.getDataFromApi()
+      },
+      deep: true,
+    },
+  },
+  mounted () {
+    this.getDataFromApi()
+  },
+  methods: {
+    getDataFromApi () {
+      this.loading = true
+      this.fakeApiCall().then(data => {
+        this.desserts = data.items
+        this.totalDesserts = data.total
+        this.loading = false
+      })
+    },
+    /**
+     * In a real application this would be a call to fetch() or axios.get()
+     */
+    fakeApiCall () {
+      return new Promise((resolve, reject) => {
+        const { sortBy, sortDesc, page, itemsPerPage } = this.options
+
+        let items = this.getDesserts()
+        const total = items.length
+
+        if (sortBy.length === 1 && sortDesc.length === 1) {
+          items = items.sort((a, b) => {
+            const sortA = a[sortBy[0]]
+            const sortB = b[sortBy[0]]
+
+            if (sortDesc[0]) {
+              if (sortA < sortB) return 1
+              if (sortA > sortB) return -1
+              return 0
+            } else {
+              if (sortA < sortB) return -1
+              if (sortA > sortB) return 1
+              return 0
+            }
+          })
+        }
+
+        if (itemsPerPage > 0) {
+          items = items.slice((page - 1) * itemsPerPage, page * itemsPerPage)
+        }
+
+        setTimeout(() => {
+          resolve({
+            items,
+            total,
+          })
+        }, 1000)
+      })
+    },
+    getDesserts () {
+      return [
+        {
+          name: 'Frozen Yogurt',
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: '1%',
+        },
+        {
+          name: 'Ice cream sandwich',
+          calories: 237,
+          fat: 9.0,
+          carbs: 37,
+          protein: 4.3,
+          iron: '1%',
+        },
+        {
+          name: 'Eclair',
+          calories: 262,
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          iron: '7%',
+        },
+        {
+          name: 'Cupcake',
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: '8%',
+        },
+        {
+          name: 'Gingerbread',
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: '16%',
+        },
+        {
+          name: 'Jelly bean',
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: '0%',
+        },
+        {
+          name: 'Lollipop',
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: '2%',
+        },
+        {
+          name: 'Honeycomb',
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: '45%',
+        },
+        {
+          name: 'Donut',
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: '22%',
+        },
+        {
+          name: 'KitKat',
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: '6%',
+        },
+      ]
+    },
+  },
+})
+  </script>
+</body>
+</html>
