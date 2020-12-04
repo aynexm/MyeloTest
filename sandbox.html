@@ -59,16 +59,33 @@
         text-decoration: underline;
     }
 
-    .header {
-      height:70px;
+    /* Header Styles */
+    header {
       text-align:center;
       background-color:var(--v-aqua-darken2);
-      font-size:20px;
+      color:#fff;
     }
+    header h1 {
+        font-size:1.3rem;
+    }
+
+    /* Table styles */
     .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
       color:rgb(0 0 0 / 90%);
     }
+    table tr {
+      background-color: #fff;
+    }
+    table td:first-child {
+        font-weight: bold;
+    }  
    
+   /* Style for person graphic in participant detail page */
+    .v-image__image--contain {
+          background-size: 100% 80%!important;
+      } 
+
+   /* Definition list styles */
     dt {
       flex-basis: 35%;
       border-bottom: 1px solid var(--v-grey-lighten2);
@@ -78,38 +95,59 @@
       border-bottom: 1px solid var(--v-grey-lighten2);
     }
 
-    .current-box.theme--light.v-card {
-      background-color:var(--v-aqua-base);
-    }
-    table tr {
-      background-color: #fff;
-    }
-    table td:first-child {
-        font-weight: bold;
-    }  
+    /* Styles for top section of the participant detail page */
     section:first-child { 
       border-bottom: 1px solid var(--v-grey-lighten2)!important; 
       background-color: #fff;
       padding-bottom: 50px;
     }
+
+    /* styles for tabs in participant detail page */
     .theme--dark.v-tabs>.v-tabs-bar { 
       border: none!important; }
     .theme--light.v-tabs>.v-tabs-bar .v-tab:not(.v-tab--active) { 
       border-bottom: 2px solid  var(--v-grey-lighten2)!important; }  
-      .v-image__image--contain {
-          background-size: 100% 80%!important;
-      }  
+      
 
-
+      /* Media Queries For Cards in Dashboard */
+      @media screen and (max-width: 1000px) {
+        .page__cards[data-v-a652fe04] { 
+            grid-template-columns: 1fr 1fr; }
+      }
+      @media screen and (max-width: 600px) {
+        .page__cards[data-v-a652fe04] { 
+            grid-template-columns: 1fr; }
+      }
   </style>
 
 </head>
 <body>
   <div id="app">
     <v-app>
-          <div class="header white--text text-center pt-2">
-            <h1 class="font-weight-bold" style="font-size:24px;">MyeloMATCH</h1>
-          </div>
+      <header>
+        <v-row>
+            <v-col col="3" class="text-left ml-3">
+                 <img
+                 height="26"
+                 src="img/nci-logo-white.svg"
+                 alt="National Cancer Institute"
+                 class="d-none d-sm-flex "
+             ></img>
+             <img
+                 height="26"
+                 src="img/nci-logo-white-stacked.svg"
+                 alt="National Cancer Institute"
+                 class="d-flex d-sm-none"
+             ></img>
+            </v-col>
+            <v-col col="6">
+                <h1 class="font-weight-bold ma-0">MyeloMATCH</h1>
+             </v-col>
+             <v-col col="3" class="text-right mr-3">
+                 <v-icon class="white--text">fa fa-user</v-icon>
+             </v-col>
+        </v-row>
+    </header>
       <v-main>
         <section>
           <v-container py-10>
